@@ -17,7 +17,7 @@ def fetch_google_results(query, num_results=1):
         return []
 
 app = Flask(__name__)
-CORS(app, resources={r"/generate": {"origins": "http://localhost:3000"}})
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 @app.route("/generate", methods=["GET"])
 def generate_file():
